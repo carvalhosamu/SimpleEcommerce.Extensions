@@ -4,6 +4,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <PackageId>SimpleEcommerce.Extensions</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>Samuel Neves Carvalho</Authors>
+	  <Company>Dev Company</Company>
+	  <RepositoryUrl>https://github.com/carvalhosamu/SimpleEcommerce.Extensions</RepositoryUrl>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>

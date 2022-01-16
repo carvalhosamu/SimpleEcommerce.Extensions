@@ -21,6 +21,6 @@ jobs:
       run: dotnet build -c Release -o out
       
     - name: Push no Nuget
-      run:
+      run: |
         cd out
         dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/carvalhosamu/index.json"  --skip-duplicate

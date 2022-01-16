@@ -1,0 +1,26 @@
+name: .NET
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore Dependencias
+      run: dotnet restore
+      
+    - name: Geração de Pacotes
+      run: dotnet build -c Release -o out
+      
+    - name: Push no Nuget
+      run:
+        cd out
+        dotnet nuget push *.nupkg --api-key{{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/carvalhosamu/index.json"  --skip-duplicate
